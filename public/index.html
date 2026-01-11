@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore - Your Literary Journey Starts Here</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
+                <h1>BookStore</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search books or authors...">
+                <button onclick="searchBooks()">🔍</button>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒
+                <span id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Discover Your Next Great Read</h2>
+            <p>Explore our vast collection of over 25 books across various genres. From timeless classics to modern thrillers, find the perfect book for every mood.</p>
+            <a href="#books" class="cta-button">Browse Collection</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <h2>Browse by Category</h2>
+        <div class="category-grid">
+            <div class="category-card" onclick="filterByCategory('Classic')">
+                <span class="category-icon">📖</span>
+                <h3>Classic</h3>
+                <p>Timeless literary masterpieces</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('Fantasy')">
+                <span class="category-icon">🧙</span>
+                <h3>Fantasy</h3>
+                <p>Magical worlds and adventures</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('Thriller')">
+                <span class="category-icon">🔪</span>
+                <h3>Thriller</h3>
+                <p>Heart-pounding suspense</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('Science Fiction')">
+                <span class="category-icon">🚀</span>
+                <h3>Science Fiction</h3>
+                <p>Futuristic adventures</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('Romance')">
+                <span class="category-icon">💕</span>
+                <h3>Romance</h3>
+                <p>Love stories that captivate</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('Dystopian')">
+                <span class="category-icon">🌆</span>
+                <h3>Dystopian</h3>
+                <p>Alternate futures</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('Memoir')">
+                <span class="category-icon">📝</span>
+                <h3>Memoir</h3>
+                <p>Personal stories and experiences</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('Self-Help')">
+                <span class="category-icon">🌱</span>
+                <h3>Self-Help</h3>
+                <p>Personal growth and development</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="books-section">
+        <h2>Our Book Collection</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="showAllBooks()">All Books</button>
+            <button class="filter-btn" onclick="sortBooks('price-low')">Price: Low to High</button>
+            <button class="filter-btn" onclick="sortBooks('price-high')">Price: High to Low</button>
+            <button class="filter-btn" onclick="sortBooks('title')">Title A-Z</button>
+        </div>
+        <div id="booksGrid" class="books-grid">
+            <!-- Books will be loaded here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About BookStore</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Welcome to BookStore, your premier destination for literary excellence. We believe that books have the power to transform lives, spark imagination, and transport readers to extraordinary worlds.</p>
+                <p>Our curated collection features over 25 carefully selected titles across diverse genres, ensuring there's something for every reader. Whether you're a fan of classic literature, thrilling mysteries, or mind-bending science fiction, we've got you covered.</p>
+                <p>We partner with renowned publishers worldwide to bring you the latest releases and timeless classics alike. Each book in our collection is chosen for its literary merit, storytelling excellence, and ability to engage and inspire readers.</p>
+            </div>
+            <div class="about-features">
+                <div class="feature">
+                    <span class="feature-icon">🚚</span>
+                    <h4>Free Shipping</h4>
+                    <p>On orders over $50</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💯</span>
+                    <h4>Quality Books</h4>
+                    <p>Curated collection</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🔄</span>
+                    <h4>Easy Returns</h4>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💳</span>
+                    <h4>Secure Payment</h4>
+                    <p>Safe transactions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <p>123 Book Street, Literary Lane<br>New York, NY 10001</p>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <p>info@bookstore.com</p>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🕐</span>
+                    <p>Mon-Sat: 9AM - 9PM<br>Sunday: 10AM - 6PM</p>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BookStore</h3>
+                <p>Your trusted source for quality literature since 2020.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#" onclick="filterByCategory('Classic')">Classic</a></li>
+                    <li><a href="#" onclick="filterByCategory('Fantasy')">Fantasy</a></li>
+                    <li><a href="#" onclick="filterByCategory('Thriller')">Thriller</a></li>
+                    <li><a href="#" onclick="filterByCategory('Science Fiction')">Sci-Fi</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">💼</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BookStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div id="cartItems" class="cart-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+        </div>
+    </div>
+
+    <!-- Book Details Modal -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <div id="modalBody">
+                <!-- Book details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
