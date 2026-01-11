@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📚 BookStore - Complete Book Store Application
 
 A full-featured book store application built with Node.js, Express.js, HTML, CSS, and JavaScript. Features 25 curated books across multiple genres with a modern, responsive frontend and a RESTful API backend.
@@ -251,3 +252,6 @@ This project is open source and available under the MIT License.
 
 **Happy Reading! 📚**
 
+=======
+# clg-small-hack
+>>>>>>> 7f83171ae179a49dc112fe66ebf6409cc60119dc
